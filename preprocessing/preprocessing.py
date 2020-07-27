@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('./data/BPIC15_2prep.csv')
+df = pd.read_csv('../data/BPIC15_2prep.csv')
 df['Complete Timestamp'] = pd.to_datetime(df['Complete Timestamp'])
 prefix = 5
 

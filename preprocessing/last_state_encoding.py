@@ -83,7 +83,8 @@ def label_add(df,last_state):
     last_state = last_state -1
     groups = df.groupby('Case ID').apply(lambda x: x.iloc[last_state,:]) 
     
-    groups = pd.get_dummies(groups['Label'],prefix='Label')
+    # groups = pd.get_dummies(groups['Label'],prefix='Label')
+    groups = groups.loc[:,'Label']
     groups = groups.reset_index(drop=True)
     
     return groups
