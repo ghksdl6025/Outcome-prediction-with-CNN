@@ -8,7 +8,7 @@ Event log outcome predicition with CNN
 - Idea with combine CNN layer and random forest works well as in [figure](#0729research)
 
 ![CNN_rf](./Img/plan.png)
-<a name="0729research"> fig: 07.29 experiment </a> 
+<a name="0729research">  </a> 
 
 - Following question is due to classification is too eay, more complicate situation is required to test
 - Also still not sure CNN works as intended, extracting right features for binary classification.
