@@ -4,6 +4,13 @@
 Event log outcome predicition with CNN
 
 ## Update
+20.08.06
+- Changing output layers but it was not problem. 
+- Data imbalance was not the problem.
+- Let's consider attach embedding layer, since almost all input data is one hot vector. 
+- It worked!. In case of last state encoding, after equalizing input size, i.e., removing columns doesn't exist across all cases.
+- After embedding layer before linear layers is efficient that just one hot vector
+
 20.07.29
 - Idea with combine CNN layer and random forest works well as in [figure](#0729research)
 
