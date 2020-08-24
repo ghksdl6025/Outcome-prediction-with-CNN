@@ -4,6 +4,11 @@
 Event log outcome predicition with CNN
 
 ## Update
+20.08.24
+- Index base encoding pre-processing file uploaded
+- BPIC 2011 with prefix 5 will be the test case for experiment
+- Continuous columns are standardized to prevent bias
+
 20.08.06
 - Changing output layers but it was not problem. 
 - Data imbalance was not the problem.
