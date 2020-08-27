@@ -11,6 +11,9 @@ Event log outcome predicition with CNN
 - There are not that significant difference among those. 
 - FC and CNN1d overfitting are found. Validation loss doesn't decrease
 - Need to think parameter tunning or redesign network could imporve result. 
+![fc_framework](Img/fc%20framework.jpg)
+![conv1d_framework](Img/Conv1d%20framework.jpg)
+![200827_result](./Img/200827result.jpg)
 
 20.08.24
 - Index base encoding pre-processing file uploaded
