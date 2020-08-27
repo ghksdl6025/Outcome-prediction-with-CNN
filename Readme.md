@@ -4,6 +4,14 @@
 Event log outcome predicition with CNN
 
 ## Update
+20.08.27
+- Fully connected network (FC) and Convolutional 1d network (CNN1d)with index base encoding done
+- This time only consider event attributes including continuous and categorical ones.
+- Compare RF, FC, CNN1d in binary label classification performance
+- There are not that significant difference among those. 
+- FC and CNN1d overfitting are found. Validation loss doesn't decrease
+- Need to think parameter tunning or redesign network could imporve result. 
+
 20.08.24
 - Index base encoding pre-processing file uploaded
 - BPIC 2011 with prefix 5 will be the test case for experiment

@@ -115,9 +115,9 @@ def time_pre(df,prefixlength):
         timelist= list(group['Complete Timestamp'])
         ngroup = pd.DataFrame()
         for pos,t in enumerate(timelist):
-            ngroup.loc[pos,'Time_month'] =t.month
-            ngroup.loc[pos,'Time_weekday'] =t.isoweekday()
-            ngroup.loc[pos,'Time_hour'] =t.hour
+            ngroup.loc[pos,'Timemonth'] =t.month
+            ngroup.loc[pos,'Timeweekday'] =t.isoweekday()
+            ngroup.loc[pos,'Timehour'] =t.hour
 
             first_time = timelist[0]
             target_time = timelist[pos]
@@ -130,7 +130,7 @@ def time_pre(df,prefixlength):
             duration_from_first = target_time - first_time
 
             ngroup.loc[pos,'Duration'] =duration_from_pre.total_seconds() / 60.0
-            ngroup.loc[pos,'Cum_duration'] =duration_from_first.total_seconds() / 60.0
+            ngroup.loc[pos,'Cumduration'] =duration_from_first.total_seconds() / 60.0
 
 
         timedf.append(ngroup)
@@ -140,7 +140,7 @@ def time_pre(df,prefixlength):
 
     
 if __name__=='__main__':
-    dft = pd.read_csv('./bpic2011/ltl1/prefix5/BPIC_2011_pre.csv')
+    dft = pd.read_csv('../data/BPIC2011_prefix5.csv')
 
     agelist = list(dft['(case) Age'])
     nagelist=[]
@@ -170,10 +170,22 @@ if __name__=='__main__':
         '(case) Treatment code:5', '(case) Treatment code:6', '(case) Treatment code:7',
         '(case) Treatment code:8', '(case) Treatment code:9',]
     case_con =['(case) Age']
-    event_cat =['Activity','Section','Specialism code','Producer code','org:group','Time_month','Time_weekday','Time_hour']
-    event_con =['Duration','Cum_duration']
+    event_cat =['Activity','Section','Specialism code','Producer code','org:group','Timemonth','Timeweekday','Timehour']
+    event_con =['Duration','Cumduration']
     cols = ['Case ID', 'Label']
 
-    
+    caseid = dft.groupby('Case ID')
+    caseidlist = []
+    labellist = []
+    for case, group in caseid:
+        
+        caseidlist.append(case)
+        labellist.append(set(group['Label']).pop())
+    print(len(caseidlist))
+    print(len(labellist))
+
     dfk = pd.concat([case_att_cat(dft,case_cat),case_att_con(dft,case_con),event_att_con(dft,event_con),event_att_cat(dft,event_cat)],axis=1)
-    dfk.to_csv('./bpic2011/ltl1/prefix5.csv',index=False)
+    print(dfk.shape)
+    dfk['Case ID'] = caseidlist
+    dfk['Label'] = labellist
+    dfk.to_csv('../data/bpic2011/indexbase_prefix5.csv',index=False)
