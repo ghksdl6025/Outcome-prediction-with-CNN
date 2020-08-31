@@ -1,3 +1,5 @@
 ## Ignore files ##
 
-CNN predicition/.ipynb_checkpoints
+CNN prediction/.ipynb_checkpoints
+CNN prediction/cnn_pred.pt
+CNN prediction/embed_predic.pt
