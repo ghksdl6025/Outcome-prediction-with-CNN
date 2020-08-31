@@ -4,6 +4,13 @@
 Event log outcome predicition with CNN
 
 ## Update
+20.08.31
+- Try to change model of FC and CNN1d to be simpler than previous one.
+- Even with simplifed model, validation loss didn't decrease even with decreasing training loss in CNN1d model.
+- On the other hand, FC model, validation loss value is reduced in early stage while validation accuracy stays after around epoch 20.
+![200831_fcresult](./Img/200831FC_result.png) 
+
+
 20.08.27
 - Fully connected network (FC) and Convolutional 1d network (CNN1d)with index base encoding done
 - This time only consider event attributes including continuous and categorical ones.
