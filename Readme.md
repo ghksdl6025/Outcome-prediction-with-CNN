@@ -8,7 +8,13 @@ Event log outcome predicition with CNN
 - Try to change model of FC and CNN1d to be simpler than previous one.
 - Even with simplifed model, validation loss didn't decrease even with decreasing training loss in CNN1d model.
 - On the other hand, FC model, validation loss value is reduced in early stage while validation accuracy stays after around epoch 20.
-![200831_fcresult](./Img/200831FC_result.png) 
+
+<p align="center">
+FC result
+<img src='./Img/200831FC_result.png'>
+</p>
+
+
 
 
 20.08.27
