@@ -1,19 +1,17 @@
 import pandas as pd
-
-df = pd.read_csv('../data/bpic2011//bpic2011prep.csv')
-df['Complete Timestamp'] = pd.to_datetime(df['Complete Timestamp'])
-prefix = 5
+import indexbase_encoding
+import math
+df = pd.read_csv('../data/trafficfine/indexbase_prefix8.csv')
 
 groups = df.groupby('Case ID')
 
-prefixedlog=[]
-for case, group in groups:
-    if len(group) >prefix:
-        group = group.sort_values(by='Complete Timestamp')
-        prefixedlog.append(group.iloc[:prefix,:])
 
-dfn = pd.concat(prefixedlog)
-dfn_name = 'BPIC2011_prefix'+str(prefix)+'.csv'
-dfn.to_csv('../data/'+dfn_name,index=False)
-
-
+whatthehack =set()
+for col in df.columns.values:
+    for k in set(df[col]):
+        try:
+            if math.isnan(k):
+                whatthehack.add(col)
+        except:
+            pass
+print(sorted(list(whatthehack)))

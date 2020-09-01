@@ -1,0 +1,20 @@
+ case_cat =['(case) Diagnosis code', '(case) Diagnosis code:1',
+        '(case) Diagnosis code:10', '(case) Diagnosis code:11', '(case) Diagnosis code:12',
+        '(case) Diagnosis code:13', '(case) Diagnosis code:14', '(case) Diagnosis code:15',
+        '(case) Diagnosis code:2', '(case) Diagnosis code:3', '(case) Diagnosis code:4',
+        '(case) Diagnosis code:5', '(case) Diagnosis code:6', '(case) Diagnosis code:7', '(case) Diagnosis code:8',
+        '(case) Diagnosis code:9', '(case) Specialism code', '(case) Specialism code:1', '(case) Specialism code:10',
+        '(case) Specialism code:11', '(case) Specialism code:12', '(case) Specialism code:13',
+        '(case) Specialism code:14', '(case) Specialism code:15', '(case) Specialism code:2',
+        '(case) Specialism code:3', '(case) Specialism code:4', '(case) Specialism code:5',
+        '(case) Specialism code:6', '(case) Specialism code:7', '(case) Specialism code:8',
+        '(case) Specialism code:9', '(case) Treatment code', '(case) Treatment code:1',
+        '(case) Treatment code:10', '(case) Treatment code:11', '(case) Treatment code:12',
+        '(case) Treatment code:13', '(case) Treatment code:14', '(case) Treatment code:15',
+        '(case) Treatment code:2', '(case) Treatment code:3', '(case) Treatment code:4',
+        '(case) Treatment code:5', '(case) Treatment code:6', '(case) Treatment code:7',
+        '(case) Treatment code:8', '(case) Treatment code:9',]
+    case_con =['(case) Age']
+    event_cat =['Activity','Section','Specialism code','Producer code','org:group','Timemonth','Timeweekday','Timehour']
+    event_con =['Duration','Cumduration']
+    cols = ['Case ID', 'Label']

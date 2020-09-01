@@ -4,6 +4,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 import math
 from sklearn import preprocessing
+from tqdm import tqdm
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
@@ -111,7 +112,7 @@ def time_pre(df,prefixlength):
     groups = df.groupby('Case ID')
 
     timedf =[]
-    for _, group in groups:
+    for _, group in tqdm(groups):
         timelist= list(group['Complete Timestamp'])
         ngroup = pd.DataFrame()
         for pos,t in enumerate(timelist):
@@ -140,7 +141,7 @@ def time_pre(df,prefixlength):
 
     
 if __name__=='__main__':
-    dft = pd.read_csv('../data/BPIC2011_prefix5.csv')
+    dft = pd.read_csv('../data/bpic2011/BPIC2011_prefix8.csv')
 
     agelist = list(dft['(case) Age'])
     nagelist=[]
@@ -151,7 +152,7 @@ if __name__=='__main__':
             nagelist.append(age)
     dft['(case) Age'] = nagelist
     
-    dft = pd.concat([dft,time_pre(dft,5)],axis=1)
+    dft = pd.concat([dft,time_pre(dft,8)],axis=1)
 
     case_cat =['(case) Diagnosis code', '(case) Diagnosis code:1',
         '(case) Diagnosis code:10', '(case) Diagnosis code:11', '(case) Diagnosis code:12',
@@ -188,4 +189,4 @@ if __name__=='__main__':
     print(dfk.shape)
     dfk['Case ID'] = caseidlist
     dfk['Label'] = labellist
-    dfk.to_csv('../data/bpic2011/indexbase_prefix5.csv',index=False)
+    dfk.to_csv('../data/bpic2011/indexbase_prefix8.csv',index=False)
