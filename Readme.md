@@ -4,6 +4,15 @@
 Event log outcome predicition with CNN
 
 ## Update
+20.09.01
+- CNN1d also shows no further improvement in performance.
+- Lets try to change dataset and use longer prefix length
+<p align="center">
+CNN1d result
+<img src='./Img/200901CNN1d_result.png'>
+</p>
+
+
 20.08.31
 - Try to change model of FC and CNN1d to be simpler than previous one.
 - Even with simplifed model, validation loss didn't decrease even with decreasing training loss in CNN1d model.
@@ -13,6 +22,7 @@ Event log outcome predicition with CNN
 FC result
 <img src='./Img/200831FC_result.png'>
 </p>
+
 
 
 
