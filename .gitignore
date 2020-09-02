@@ -1,9 +1,5 @@
 ## Ignore files ##
-<<<<<<< HEAD
-data/trafficfine
-=======
-#data/
->>>>>>> c0130f358197c68f1cd4d95703eac58881952660
+data/
 CNN prediction/.ipynb_checkpoints
 CNN prediction/cnn_pred.pt
 CNN prediction/embed_predic.pt
