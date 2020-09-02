@@ -1,0 +1,5 @@
+    case_cat =['article','points','vehicleClass']
+    case_con =['amount']
+    event_cat =['Activity','dismissal','lastSent','matricola','notificationType','org:resource','Timemonth','Timeweekday','Timehour']
+    event_con =['expense','paymentAmount','totalPaymentAmount']
+    cols = ['Case ID', 'Label']
