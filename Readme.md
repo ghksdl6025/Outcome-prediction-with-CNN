@@ -4,6 +4,23 @@
 Event log outcome predicition with CNN
 
 ## Update
+20.09.02
+- Try to use 'Traffic fine' event log instead of BPIC 2011 to cross check 'CNN VS LSTM' paper.
+- In terms of accuracy, random forest doens't show much difference between CNN and LSTM performance in paper
+- Change the research point to include event-based attributes in input as well as only activity and time related artifical attributes
+  
+Problem  
+1. CNN requires same number of attributes in each events to fix kernel size and stride.
+2. Some event-based attributes relied on specific activity cause size imbalance in intra-case level and inter-case level.
+
+Expected Solution  
+1. By excluding problematic attributes, equalize event window size. ex) Only activity and time related attrs.
+2. Find alternative way to impute Nan value, i.e., how to handle Nan value in deep learning model?
+
+- This research shall be not point to performance imporvement with CNN1d.  
+- But to develop encoding method in pre-processing stage that includes event-based and case-based attributes  
+  
+
 20.09.01
 - CNN1d also shows no further improvement in performance.
 - Lets try to change dataset and use longer prefix length
